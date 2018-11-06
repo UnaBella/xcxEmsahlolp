@@ -18,25 +18,19 @@ Page({
     console.log(e)
       wx.scanCode({
         success: (res) => {
-          console.log('res', res.result)
           var send = {
             code: 2,
             barcode: res.result
           };
-          let url = 'http://192.168.0.11:51186/llback/Scan/SCANGOODSURL'
-          let urls = 'http://console.llwell.net/llback/Scan/SCANGOODSURL'
+          let url = 'https://eshop.llwell.net/llback/Scan/SCANGOODSURL'
           wx.request({
-            url: urls,
+            url: url,
             data: send,
             method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
             header: {
               'content-type': 'application/json' // 默认值
             }, // 设置请求的 header
             success: function (res) {
-              
-              // console.log('jiekoufanhui',res);
-              // console.log(resArr[resArr.length-1])
-              
               if (res.data.indexOf("id") != -1){
                 wx.hideLoading();
                 const resArr = res.data.split('&')
