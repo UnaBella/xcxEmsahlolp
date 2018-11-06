@@ -81,7 +81,8 @@
         "pages/changce/article/list",
         "pages/changce/article/detail",
         "pages/changce/sign/index",
-        "pages/changce/sign/records"
+        "pages/changce/sign/records",
+        "pages/scan/scan"
     ],
     "window": {
         "backgroundColor": "#fafafa",
@@ -108,10 +109,16 @@
                 "selectedIconPath": "static/images/tabbar/icon-2-active.png"
             },
             {
-                "pagePath": "pages/member/cart/index",
-                "text": "购物车",
-                "iconPath": "static/images/tabbar/icon-4.png",
-                "selectedIconPath": "static/images/tabbar/icon-4-active.png"
+                "pagePath": "pages/scan/scan",
+                "text": "扫一扫",
+                "iconPath": "static/images/tabbar/icon-f3.png",
+                "selectedIconPath": "static/images/tabbar/icon-f3-active.png"
+            },
+            {
+              "pagePath": "pages/member/cart/index",
+              "text": "购物车",
+              "iconPath": "static/images/tabbar/icon-4.png",
+              "selectedIconPath": "static/images/tabbar/icon-4-active.png"
             },
             {
                 "pagePath": "pages/member/index/index",
