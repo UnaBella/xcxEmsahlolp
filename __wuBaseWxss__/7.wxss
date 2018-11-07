@@ -703,6 +703,8 @@ image.radius {
 }
 /* una */
 .fui-goods-group.block .fui-goods-item{
+    border-radius: 20rpx;
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.20);
     background: #fff;
     width: 48%;
     margin: 1%;
