@@ -107,9 +107,9 @@
         <view bindtap="bindSort" class="item {{params.order==''||!params.order?'on':''}}" data-order="">
             <view class="text">综合</view>
         </view>
-        <view bindtap="bindSort" class="item {{params.order=='sales'?'on':''}}" data-order="sales">
+        <!-- <view bindtap="bindSort" class="item {{params.order=='sales'?'on':''}}" data-order="sales">
             <view class="text">销量</view>
-        </view>
+        </view> -->
         <view bindtap="bindSort" class="item item-price {{params.order=='minprice'?'on':''}}" data-order="minprice">
             <view class="text">价格 <image class="icon" src="/static/images/icon/listsort{{listorder}}.png"></image>
             </view>

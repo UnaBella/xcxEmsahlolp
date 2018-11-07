@@ -330,6 +330,7 @@
 }
 
 .fui-goods-item .detail .price {
+  
     position: relative;
     display: -webkit-box;
     display: -webkit-flex;
@@ -340,8 +341,24 @@
     align-items: center;
     font-size: 32rpx;
     margin-top: 12rpx;
+    
+}
+/* ---una add start--- */
+.fui-goods-item {
+  border-radius: 20rpx;
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.20);
+  background: #fff;
+}
+.fui-goods-group.block .fui-goods-item{
+   /* padding:0px 0px;  */
+  /* width: 48%; */
+  /* margin:auto; */
 }
 
+.fui-goods-item .detail{
+  /* background: transparent; */
+}
+/* ---una add end--- */
 .fui-icon-group .fui-icon-col .icon image {
     height: 88rpx;
     width: 88rpx;

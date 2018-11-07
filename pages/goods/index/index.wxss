@@ -359,7 +359,17 @@ page {
     border-radius: 5rpx;
     color: #333;
 }
-
+.fui-goods-item{
+  border-radius: 20rpx;
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.20);
+  
+}
+.fui-goods-item .detail{
+  /* background: transparent; */
+}
+.fui-goods-group.block .fui-goods-item{
+background: #fff;
+}
 .fui-goods-item .detail .price .text {
     font-size: 32rpx;
 }

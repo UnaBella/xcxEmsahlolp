@@ -701,7 +701,13 @@ image.radius {
     padding: 5px 3px;
     display: block;
 }
-
+/* una */
+.fui-goods-group.block .fui-goods-item{
+    background: #fff;
+    width: 48%;
+    margin: 1%;
+}
+/* una */
 .fui-goods-group.block .fui-goods-item .detail {
     padding: 8rpx;
     overflow: hidden;
@@ -721,10 +727,14 @@ image.radius {
 .fui-goods-group.block.one .fui-goods-item {
     width: 100%;
     float: none;
+    margin: auto;
 }
 
 .fui-goods-group.block.three .fui-goods-item {
-    width: 33.33%;
+    /* width: 33.33%; */
+    width: 31.33%;
+    margin: 1%;
+    background: #fff;
 }
 
 .fui-goods-item {
