@@ -11,7 +11,7 @@
         </view>
         <block>
             <block wx:if="{{!close}}">
-                <view class="text">亲，您还没有授权，未授权将会影响小程序正常体验，快去授权信息吧！</view>
+                <view class="text">您还没有授权，未授权将会影响小程序正常体验，快去授权信息吧！</view>
             </block>
         </block>
         <block>
