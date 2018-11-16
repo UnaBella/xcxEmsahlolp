@@ -28,10 +28,10 @@
     </block>
 </block>
 <view class="goods-advs {{showpic||goods.video==''?'block':'none'}}" style="width:100%;height:auto;position:relative">
-    <swiper circular="{{circular}}" class="index-adcs-sqiper" duration="{{duration}}" indicatorDots="{{indicatorDots}}" interval="{{interval}}" style="width:100%;height:{{advHeight}}rpx;">
+    <swiper circular="{{circular}}" class="index-adcs-sqiper" duration="{{duration}}" indicatorDots="{{indicatorDots}}" interval="{{interval}}" style="width:100%;height:{{advHeight*2}}rpx;">
         <block wx:for="{{goods.thumbs}}" wx:for-index="idx">
             <swiper-item style="background-image:url('{{item}}');height:100%;">
-                <image bindload="{{idx==0?'imageLoad':''}}" class="goodsadvimg" src="{{item}}"></image>
+                <image bindload="{{idx==0?'imageLoad':''}}"  mode="aspectFit" class="goodsadvimg" src="{{item}}"></image>
             </swiper-item>
         </block>
     </swiper>
