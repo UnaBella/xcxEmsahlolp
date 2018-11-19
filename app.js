@@ -4,7 +4,12 @@ App({
     onShow: function() {
         this.onLaunch();
     },
-    onLaunch: function() {
+    onLaunch: function(option) {
+      if(option.query!=undefined){
+        this.needData.agent = option.query.agent
+      }
+     
+
         var e = this;
         wx.getSystemInfo({
             success: function(t) {
@@ -19,7 +24,8 @@ App({
                 t.globalData.ww = n, t.globalData.hh = o;
             }
         }), this.getConfig();
-        this.getUserInfo(function(e) {}, function(e, t) {
+        this.getUserInfo(function(e) {
+        }, function(e, t) {
             var t = t ? 1 : 0, e = e || "";
             t && wx.redirectTo({
                 url: "/pages/message/auth/index?close=" + t + "&text=" + e
@@ -71,14 +77,47 @@ App({
         }
         return t;
     },
+    scan:function(a){
+      const params = {
+        openId:a,
+        pagentCode:this.needData.agent,
+        appId: this.globalData.appid
+      }
+      // console.log('params', params)
+      let url = 'https://eshop.llwell.net/llback/Api/BindingWXAPP'
+      wx.request({
+        url: url,
+        data: params,
+        method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+        header: {
+          'content-type': 'application/json' // 默认值
+        }, // 设置请求的 header
+        success: function (res) {
+            wx.hideLoading();
+        },
+        fail: function (res) {
+          wx.hideLoading();
+        },
+        complete: function () {
+          // 
+        }
+      })
+    },
     getUserInfo: function(t, n) {
+      const that = this;
         var o = this, i = {};
         !(i = o.getCache("userinfo")) || i.needauth ? wx.login({
             success: function(a) {
                 a.code ? e.post("wxapp/login", {
                     code: a.code
                 }, function(a) {
+                  const ag = that.needData.agent
+                  if (ag!= undefined){
+                    that.scan(a.openid)
+                  }
+                  
                     a.error ? e.alert("获取用户登录态失败:" + a.message) : a.isclose && n && "function" == typeof n ? n(a.closetext, !0) : wx.getUserInfo({
+                      
                         success: function(n) {
                             i = n.userInfo, e.get("wxapp/auth", {
                                 data: n.encryptedData,
@@ -167,6 +206,9 @@ App({
     },
     globalDataClose: {
         flag: !1
+    },
+    needData:{
+      agent:''
     },
     globalData: {
       appid: "wx212d522fca71351b",

@@ -1,4 +1,5 @@
 <view class="page">
+<official-account></official-account>
     <view class="inner">
         <view class="image">
           <view class='userAvatarUrl'>
